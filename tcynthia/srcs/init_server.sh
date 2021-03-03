@@ -5,7 +5,7 @@ service mysql start
 mysql < ./tmp/init_mysql.sql
 
 mkdir /etc/nginx/ssl_certs
-openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out /etc/nginx/ssl_certs/private.pem -keyout /etc/nginx/ssl_certs/public.key -subj "/C=RU/ST=Moscow/L=Moscow/O=School_21/OU=shmignon/CN=localhost"
+openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out /etc/nginx/ssl_certs/private.pem -keyout /etc/nginx/ssl_certs/public.key -subj "/C=RU/ST=Moscow/L=Moscow/O=School_21/OU=tcynthia/CN=localhost"
 openssl rsa -noout -text -in /etc/nginx/ssl_certs/localhost_public.key
 
 mkdir /var/www/html/phpmyadmin
