@@ -12,11 +12,13 @@ mkdir /var/www/html/phpmyadmin
 wget https://files.phpmyadmin.net/phpMyAdmin/5.0.4/phpMyAdmin-5.0.4-all-languages.zip
 unzip ./phpMyAdmin-5.0.4-all-languages.zip -d /
 mv /phpMyAdmin-5.0.4-all-languages/* /var/www/html/phpmyadmin
+rm -rf ./phpMyAdmin-5.0.4-all-languages.zip
 
 wget http://wordpress.org/latest.tar.gz
 tar xfvz latest.tar.gz
 mv wordpress/ /var/www/html/
 mv /tmp/wp-config.php /var/www/html/wordpress/
+rm -rf ./latest.tar.gz
 
 chown -R www-data /var/www/html
 chmod -R 755 /var/www/html

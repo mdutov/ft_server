@@ -6,12 +6,11 @@ COPY ./srcs/nginx.conf /etc/nginx/sites-available/localhost
 RUN ln -s /etc/nginx/sites-available/localhost /etc/nginx/sites-enabled/localhost
 RUN rm -rf /etc/nginx/sites-enabled/default
 
-
+COPY ./srcs/change_autoindex.sh ./change_autoindex.sh
 COPY ./srcs/init_mysql.sql /tmp/init_mysql.sql
 COPY ./srcs/init_server.sh /tmp/init_server.sh
-COPY ./srcs/wp-config.php /tmp/wp-config.php
-COPY ./srcs/change_autoindex.sh ./change_autoindex.sh
 COPY ./srcs/start.sh ./start.sh
+COPY ./srcs/wp-config.php /tmp/wp-config.php
 
 RUN sh ./tmp/init_server.sh
 
